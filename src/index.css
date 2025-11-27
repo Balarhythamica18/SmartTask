@@ -1,0 +1,132 @@
+:root {
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --surface-dark: #1c2537;
+  --text: #1f2937;
+  --text-light: #ffffff;
+  --border: #e5e7eb;
+
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+
+  --space-xs: 6px;
+  --space-sm: 10px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.1);
+
+  --transition: 0.22s ease;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.app-shell {
+  max-width: 1100px;
+  margin: var(--space-xl) auto;
+  padding: var(--space-md);
+}
+
+.brand {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: var(--space-lg);
+}
+
+.form-card {
+  background: var(--surface-dark);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  color: var(--text-light);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.task-list {
+  margin-top: var(--space-lg);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-md);
+}
+
+.task-item {
+  background: var(--surface);
+  color: var(--text);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.task-item:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+input,
+textarea {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  padding: var(--space-sm) var(--space-md);
+  background: #f9fafb;
+  color: var(--text);
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af;
+}
+
+button {
+  background: var(--accent);
+  border: none;
+  color: var(--text-light);
+  font-weight: 600;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+button:hover {
+  background: var(--accent-hover);
+  box-shadow: var(--shadow-md);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+* {
+  transition: background var(--transition), 
+              color var(--transition), 
+              border var(--transition), 
+              box-shadow var(--transition);
+}
